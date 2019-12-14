@@ -55,7 +55,6 @@ func NewPool(ctx context.Context, size uint) WorkersPool {
 				i := uint(0)
 				for ; i < size; i++ {
 					if wp.workers[i] == deadW {
-						fmt.Println("reveal worker")
 						wp.workers[i] = newWorker(wp.outJobCh, wp.deadCh)
 						break
 					}
